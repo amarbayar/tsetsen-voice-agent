@@ -8,6 +8,7 @@ edition = "2024"
 # The toolchain the code is built and tested with (rust-toolchain.toml).
 rust-version = "1.99"
 homepage = "https://tsetsen.ai"
+repository = "https://github.com/amarbayar/tsetsen-voice-agent"
 license = "Apache-2.0"
 
 [workspace.dependencies]
