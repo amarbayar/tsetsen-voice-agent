@@ -305,12 +305,11 @@ fn collect_apps(dir: &Path, depth: usize, apps: &mut Vec<String>) {
     }
 }
 
-#[cfg(test)]
+#[cfg(all(test, target_os = "macos"))]
 mod tests {
     use super::*;
 
     #[test]
-    #[cfg(target_os = "macos")]
     fn finds_the_system_apps() {
         let apps = installed_apps().unwrap();
         for app in ["Calculator", "TextEdit", "Notes"] {

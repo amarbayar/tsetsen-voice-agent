@@ -110,6 +110,7 @@ async fn connect_photos(choices: &Choices, local: &mut Local) {
 
 /// No photo library adapter yet on this OS.
 #[cfg(not(target_os = "macos"))]
+#[allow(clippy::unused_async)] // the same signature as the macOS version
 async fn connect_photos(_: &Choices, _: &mut Local) {
     crate::note(&format!(
         "pictures are not supported on {} yet",

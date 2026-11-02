@@ -1,0 +1,32 @@
+{
+  "problemMatcher": [
+    {
+      "owner": "rust-short",
+      "pattern": [
+        {
+          "regexp": "^(.+?):(\\d+):(\\d+): (warning|error)(?:\\[\\S+\\])?: (.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      ]
+    },
+    {
+      "owner": "rust-panic",
+      "pattern": [
+        {
+          "regexp": "^thread '.*' \\(\\d+\\) panicked at (.+?):(\\d+):(\\d+):$",
+          "file": 1,
+          "line": 2,
+          "column": 3
+        },
+        {
+          "regexp": "^(.*)$",
+          "message": 1
+        }
+      ]
+    }
+  ]
+}
