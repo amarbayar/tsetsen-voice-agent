@@ -1,0 +1,18 @@
+[package]
+name = "tsetsen-policy"
+description = "Data-egress and action-risk policy for Tsetsen. Pure logic, property-tested."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+homepage.workspace = true
+license.workspace = true
+
+[dependencies]
+thiserror.workspace = true
+tsetsen-core.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+
+[lints]
+workspace = true

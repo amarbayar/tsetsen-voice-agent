@@ -1,0 +1,17 @@
+[package]
+name = "tsetsen-testkit"
+description = "Scriptable fakes for Tsetsen's ports, for tests in any crate."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+homepage.workspace = true
+license.workspace = true
+
+[dependencies]
+async-trait.workspace = true
+futures-util.workspace = true
+tokio = { workspace = true, features = ["time"] }
+tsetsen-core.workspace = true
+
+[lints]
+workspace = true

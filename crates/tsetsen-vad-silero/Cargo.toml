@@ -1,0 +1,20 @@
+[package]
+name = "tsetsen-vad-silero"
+description = "Silero voice activity detection for Tsetsen, on ONNX Runtime."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+homepage.workspace = true
+license.workspace = true
+
+[dependencies]
+ndarray.workspace = true
+thiserror.workspace = true
+tsetsen-core.workspace = true
+tsetsen-onnx.workspace = true
+
+[dev-dependencies]
+hound = "3"
+
+[lints]
+workspace = true

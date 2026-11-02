@@ -1,0 +1,23 @@
+[package]
+name = "tsetsen-macos"
+description = "macOS services for Tsetsen: the photo library and a picture viewer through a small Swift helper, and Spotlight file search."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+homepage.workspace = true
+license.workspace = true
+
+[dependencies]
+async-trait.workspace = true
+jiff.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio = { workspace = true, features = ["io-util", "macros", "process", "rt", "sync", "time", "fs"] }
+tracing.workspace = true
+tsetsen-core.workspace = true
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["macros", "rt-multi-thread", "process", "time", "fs"] }
+
+[lints]
+workspace = true

@@ -1,0 +1,18 @@
+/target
+.DS_Store
+
+# Never commit secrets or personal data.
+.env
+.env.*
+client_secret*.json
+*.pem
+*.key
+*.p12
+
+# Local runtime output: mail, recordings, models.
+*.eml
+outbox/
+*.wav
+*.aiff
+*.onnx
+*.onnx.data

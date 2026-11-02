@@ -1,0 +1,59 @@
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+
+[workspace.package]
+version = "0.0.1"
+edition = "2024"
+# The toolchain the code is built and tested with (rust-toolchain.toml).
+rust-version = "1.99"
+homepage = "https://tsetsen.ai"
+license = "Apache-2.0"
+
+[workspace.dependencies]
+tsetsen-agent-desktop = { path = "crates/tsetsen-agent-desktop", version = "0.0.1" }
+tsetsen-core = { path = "crates/tsetsen-core", version = "0.0.1" }
+tsetsen-policy = { path = "crates/tsetsen-policy", version = "0.0.1" }
+tsetsen-router = { path = "crates/tsetsen-router", version = "0.0.1" }
+tsetsen-engine = { path = "crates/tsetsen-engine", version = "0.0.1" }
+tsetsen-testkit = { path = "crates/tsetsen-testkit", version = "0.0.1" }
+tsetsen-google = { path = "crates/tsetsen-google", version = "0.0.1" }
+tsetsen-macos = { path = "crates/tsetsen-macos", version = "0.0.1" }
+tsetsen-files = { path = "crates/tsetsen-files", version = "0.0.1" }
+tsetsen-llm-openai = { path = "crates/tsetsen-llm-openai", version = "0.0.1" }
+tsetsen-onnx = { path = "crates/tsetsen-onnx", version = "0.0.1" }
+tsetsen-tts-supertonic = { path = "crates/tsetsen-tts-supertonic", version = "0.0.1" }
+tsetsen-vad-silero = { path = "crates/tsetsen-vad-silero", version = "0.0.1" }
+tsetsen-audio = { path = "crates/tsetsen-audio", version = "0.0.1" }
+tsetsen-cli = { path = "crates/tsetsen-cli", version = "0.0.1" }
+tsetsen-stt-parakeet = { path = "crates/tsetsen-stt-parakeet", version = "0.0.1" }
+
+async-trait = "0.1"
+futures-core = "0.3"
+jiff = "0.2"
+futures-util = { version = "0.3", default-features = false, features = ["std"] }
+ndarray = "0.17"
+# Pinned exactly: parakeet-rs pins it, and every adapter must share one runtime.
+ort = "=2.0.0-rc.15"
+proptest = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tokio = { version = "1", default-features = false }
+tracing = "0.1"
+url = "2"
+wiremock = "0.6"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"
+unreachable_pub = "warn"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+module_name_repetitions = "allow"
+# `assert!(x.is_empty())` reads better than comparing against an empty literal.
+assert_is_empty = "allow"
+missing_errors_doc = "allow"

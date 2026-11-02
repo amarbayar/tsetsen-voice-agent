@@ -1,0 +1,20 @@
+[package]
+name = "tsetsen-files"
+description = "Portable file services for Tsetsen: finding the user's own documents, and opening them in their apps."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+homepage.workspace = true
+license.workspace = true
+
+[dependencies]
+async-trait.workspace = true
+tokio = { workspace = true, features = ["process", "rt", "time"] }
+tracing.workspace = true
+tsetsen-core.workspace = true
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
+
+[lints]
+workspace = true

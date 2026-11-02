@@ -1,0 +1,17 @@
+[package]
+name = "tsetsen-core"
+description = "Domain types and port traits for Tsetsen. No I/O, no OS, no vendors."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+homepage.workspace = true
+license.workspace = true
+
+[dependencies]
+async-trait.workspace = true
+futures-core.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true

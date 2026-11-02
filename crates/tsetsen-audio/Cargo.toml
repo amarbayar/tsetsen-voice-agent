@@ -1,0 +1,21 @@
+[package]
+name = "tsetsen-audio"
+description = "Microphone, speaker and echo cancellation for Tsetsen, on every desktop OS."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+homepage.workspace = true
+license.workspace = true
+
+[dependencies]
+async-trait.workspace = true
+cpal = "0.18"
+ringbuf = "0.4"
+sonora = "0.2"
+thiserror.workspace = true
+tokio = { workspace = true, features = ["sync", "time"] }
+tracing.workspace = true
+tsetsen-core.workspace = true
+
+[lints]
+workspace = true

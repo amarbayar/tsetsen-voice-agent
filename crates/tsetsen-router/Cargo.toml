@@ -1,0 +1,16 @@
+[package]
+name = "tsetsen-router"
+description = "Per-layer provider selection with fallbacks, language and egress filtering."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+homepage.workspace = true
+license.workspace = true
+
+[dependencies]
+thiserror.workspace = true
+tsetsen-core.workspace = true
+tsetsen-policy.workspace = true
+
+[lints]
+workspace = true

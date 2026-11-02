@@ -1,0 +1,28 @@
+[package]
+name = "tsetsen-engine"
+description = "Tsetsen pipelines, composed purely from ports: dictation today, commands next."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+homepage.workspace = true
+license.workspace = true
+
+[dependencies]
+async-trait.workspace = true
+futures-util.workspace = true
+jiff.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tokio = { workspace = true, features = ["rt", "macros", "sync", "time"] }
+tracing.workspace = true
+tsetsen-core.workspace = true
+tsetsen-policy.workspace = true
+tsetsen-router.workspace = true
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["macros", "rt", "sync", "test-util", "time"] }
+tsetsen-testkit.workspace = true
+
+[lints]
+workspace = true

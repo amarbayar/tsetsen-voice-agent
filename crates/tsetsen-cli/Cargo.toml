@@ -1,0 +1,42 @@
+[package]
+name = "tsetsen-cli"
+description = "The `tsetsen` command: talk to your computer, locally."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+homepage.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "tsetsen"
+path = "src/main.rs"
+
+[dependencies]
+futures-util.workspace = true
+clap = { version = "4", features = ["derive", "env"] }
+hound = "3"
+jiff.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio = { workspace = true, features = ["fs", "macros", "rt-multi-thread", "signal", "sync", "time"] }
+tracing.workspace = true
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+async-trait.workspace = true
+tsetsen-agent-desktop.workspace = true
+tsetsen-audio.workspace = true
+tsetsen-core.workspace = true
+tsetsen-engine.workspace = true
+tsetsen-google.workspace = true
+tsetsen-files.workspace = true
+tsetsen-llm-openai.workspace = true
+tsetsen-policy.workspace = true
+tsetsen-router.workspace = true
+tsetsen-stt-parakeet.workspace = true
+tsetsen-tts-supertonic.workspace = true
+tsetsen-vad-silero.workspace = true
+
+[target.'cfg(target_os = "macos")'.dependencies]
+tsetsen-macos.workspace = true
+
+[lints]
+workspace = true

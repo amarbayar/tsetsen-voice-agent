@@ -1,0 +1,28 @@
+[package]
+name = "tsetsen-stt-parakeet"
+description = "NVIDIA Parakeet TDT speech-to-text adapter for Tsetsen, on ONNX Runtime."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+homepage.workspace = true
+license.workspace = true
+
+[features]
+# Core ML execution on Apple Silicon (Neural Engine / GPU). CPU is the default.
+coreml = ["parakeet-rs/coreml"]
+
+[dependencies]
+async-trait.workspace = true
+parakeet-rs = "0.4"
+thiserror.workspace = true
+tokio = { workspace = true, features = ["rt", "time"] }
+tracing.workspace = true
+tsetsen-core.workspace = true
+tsetsen-onnx.workspace = true
+
+[dev-dependencies]
+hound = "3"
+tokio = { workspace = true, features = ["macros", "rt-multi-thread", "time"] }
+
+[lints]
+workspace = true

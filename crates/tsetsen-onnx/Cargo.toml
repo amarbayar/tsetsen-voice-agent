@@ -1,0 +1,15 @@
+[package]
+name = "tsetsen-onnx"
+description = "The process-wide ONNX Runtime that Tsetsen's local model adapters share."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+homepage.workspace = true
+license.workspace = true
+
+[dependencies]
+ort.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true
