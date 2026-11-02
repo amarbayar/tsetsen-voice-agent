@@ -111,7 +111,10 @@ async fn connect_photos(choices: &Choices, local: &mut Local) {
 /// No photo library adapter yet on this OS.
 #[cfg(not(target_os = "macos"))]
 #[allow(clippy::unused_async)] // the same signature as the macOS version
-async fn connect_photos(_: &Choices, _: &mut Local) {
+async fn connect_photos(choices: &Choices, _: &mut Local) {
+    if choices.photos_helper.is_some() {
+        crate::warn("--photos-helper only applies on macOS; ignoring it");
+    }
     crate::note(&format!(
         "pictures are not supported on {} yet",
         Os::current().name()

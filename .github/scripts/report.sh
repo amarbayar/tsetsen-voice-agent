@@ -6,7 +6,7 @@ log="$(mktemp)"
 "$@" 2>&1 | tee "$log"
 status=$?
 if [[ $status -ne 0 ]]; then
-  body="$(grep -vE '^\s*(Compiling|Checking|Downloaded|Downloading|Fresh|Blocking)' "$log" | tail -n 60 \
+  body="$(sed -E $'s/\x1b\\[[0-9;]*m//g' "$log" | grep -vE '^\s*(Compiling|Checking|Downloaded|Downloading|Fresh|Blocking)' | tail -n 60 \
     | awk 'BEGIN { ORS = "%0A" } { gsub(/%/, "%25"); gsub(/\r/, ""); print }')"
   echo "::error title=$1 $2 failed::$body"
 fi

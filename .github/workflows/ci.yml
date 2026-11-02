@@ -9,7 +9,8 @@ permissions:
   contents: read
 
 env:
-  CARGO_TERM_COLOR: always
+  # Plain output, so problem matchers can read it.
+  CARGO_TERM_COLOR: never
   RUSTFLAGS: -D warnings
 
 jobs:
