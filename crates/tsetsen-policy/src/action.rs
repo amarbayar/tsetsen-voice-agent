@@ -98,8 +98,12 @@ const REVERSIBLE_KEYS: &[&str] = &[
     "primary+8",
     "primary+9",
     "primary+,",
+    // Switching tabs. Off macOS, ctrl is the primary modifier, so ctrl+tab
+    // reads as primary+tab; on macOS that is cmd+tab, switching apps.
     "ctrl+tab",
     "ctrl+shift+tab",
+    "primary+tab",
+    "primary+shift+tab",
 ];
 
 /// Canonical form: lowercase, modifiers in a fixed order, aliases folded.
@@ -409,6 +413,7 @@ mod tests {
             &primary("z"),
             &format!("shift+{PRIMARY}+z"),
             "ctrl+tab",
+            "ctrl+shift+tab",
         ] {
             assert_eq!(key_consequence(combo), Consequence::Reversible, "{combo}");
         }
