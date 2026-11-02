@@ -28,5 +28,7 @@ jobs:
       - run: echo "::add-matcher::.github/rust-matcher.json"
       # rust-toolchain.toml pins the toolchain; rustup installs it on first use.
       - run: cargo fmt --all --check
-      - run: cargo clippy --workspace --all-targets --message-format=short
-      - run: cargo test --workspace
+      - shell: bash
+        run: .github/scripts/report.sh cargo clippy --workspace --all-targets --message-format=short
+      - shell: bash
+        run: .github/scripts/report.sh cargo test --workspace
